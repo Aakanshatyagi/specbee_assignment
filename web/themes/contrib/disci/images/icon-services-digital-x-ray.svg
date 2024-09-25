@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68">
+    <defs>
+        <clipPath id="clippath-icon-services-digital-x-ray">
+            <circle cx="34" cy="39" r="27" fill="none" />
+        </clipPath>
+    </defs>
+    <path class="uk-preserve" d="M44,50,34,33.6,24,50S13.4,21.6,14,14.2A13.5,13.5,0,0,1,28.7,2.1,12,12,0,0,1,34,3.6a13.8,13.8,0,0,1,18.6,6h0A14.5,14.5,0,0,1,54,14.2C54.6,21.6,44,50,44,50Z" fill="#fff" />
+    <path d="M44,50,34,33.6,24,50S13.4,21.6,14,14.2A13.5,13.5,0,0,1,28.7,2.1,12,12,0,0,1,34,3.6a13.8,13.8,0,0,1,18.6,6h0A14.5,14.5,0,0,1,54,14.2C54.6,21.6,44,50,44,50Z" fill="none" stroke="#1e3876" stroke-miterlimit="10" stroke-width="2" />
+    <circle class="uk-preserve" cx="34" cy="39" r="27" fill="#4faae7" />
+    <g clip-path="url(#clippath-icon-services-digital-x-ray)">
+        <path class="uk-preserve" d="M44,50,34,33.6,24,50S13.4,21.6,14,14.2A13.5,13.5,0,0,1,28.7,2.1,12,12,0,0,1,34,3.6a13.8,13.8,0,0,1,18.6,6h0A14.5,14.5,0,0,1,54,14.2C54.6,21.6,44,50,44,50Z" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2" />
+    </g>
+</svg>

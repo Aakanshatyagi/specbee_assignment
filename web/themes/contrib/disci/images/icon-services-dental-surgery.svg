@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68">
+    <circle class="uk-preserve" cx="34" cy="37" r="27" fill="#f6a2b1" />
+    <path class="uk-preserve" d="M54,10a9,9,0,1,1-9-9A9,9,0,0,1,54,10ZM42,24,41,67h8L48,24ZM21,9h6V1H16V9l6,20V67h8V29Z" fill="#fff" />
+    <polygon class="uk-preserve" points="21 9 16 9 22 29 30 29 21 9" fill="#4faae7" />
+    <path d="M54,10a9,9,0,1,1-9-9A9,9,0,0,1,54,10ZM45,24V19m3,5H42L41,67h8Zm-6,5h6M30,34H22M21,9l9,20V67H22V29L16,9V1H27V9H16M30,29H22M27,5h5" fill="none" stroke="#1e3876" stroke-miterlimit="10" stroke-width="2" />
+</svg>

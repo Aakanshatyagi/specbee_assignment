@@ -1,0 +1,36 @@
+favicon:
+  use_default: true
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  use_default: true
+facebook: '#'
+twitter: '#'
+instagram: '#'
+linkedin: '#'
+email: seasernet@gmail.com
+address: 'İstanbul, Türkiye'
+phone: '+905432123'
+footer_icons_show: 1
+footer_links: "https://facebook.com/yootheme\r\nhttps://www.instagram.com/\r\nhttps://www.yelp.com/"
+top_icons_show: 1
+top_links: "https://facebook.com/yootheme\r\nhttps://www.instagram.com/\r\nhttps://www.yelp.com/"
+icons_show:
+  footer: footer
+  top: top
+footer_icon_info: "https://www.facebook.com/yootheme\r\nhttps://www.instagram.com/\r\nhttps://www.yelp.com/"
+social_icons: "https://facebook.com/yootheme\r\nhttps://www.instagram.com/\r\nhttps://www.yelp.com/"
+phone_number: '+908765432100'
+office_hours: "Mo – Tu:8 am – 5 pm\r\nWe – Th:8 am – 4 pm\r\nFr:8 – 12 am"
+location: "Main Street 1234\r\n5678 Anytown\r\nGermany\r\n"
+show_phone_number: 1
+show_email: 1
+show_office_hours: 1
+show_location: 1
+show_contact: 0
+show_footer_icons: 1
+show_top_icons: 1
+social_icons_info: "https://facebook.com/yootheme\r\nhttps://www.instagram.com/\r\nhttps://www.yelp.com/"

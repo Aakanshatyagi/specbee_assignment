@@ -1,0 +1,20 @@
+uikit:
+  version: 3.x
+#  css:
+#    base:
+#      //cdn.jsdelivr.net/npm/uikit@3.21.4/dist/css/uikit.min.css: { external: true }
+  js:
+      //cdn.jsdelivr.net/npm/uikit@3.21.4/dist/js/uikit.min.js: { external: true }
+      //cdn.jsdelivr.net/npm/uikit@3.21.4/dist/js/uikit-icons.min.js: { external: true }
+
+global-style:
+  css:
+    theme:
+      css/theme.css: { minified: true }
+
+google_fonts:
+  remote: true
+  license: GPL
+  css:
+    theme:
+      //fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Open+Sans:wght@400&display=swap: { type: external, minified: true }

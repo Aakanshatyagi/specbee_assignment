@@ -1,0 +1,30 @@
+uuid: 194493bb-e123-4ec4-b59e-94f315f29681
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:8725f74d-3b66-4d68-b84e-285656486e43'
+  module:
+    - block_content
+    - system
+  theme:
+    - disci
+id: disci_blogbanner
+theme: disci
+region: content_below
+weight: 0
+provider: null
+plugin: 'block_content:8725f74d-3b66-4d68-b84e-285656486e43'
+settings:
+  id: 'block_content:8725f74d-3b66-4d68-b84e-285656486e43'
+  label: 'Blog Banner'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /blog

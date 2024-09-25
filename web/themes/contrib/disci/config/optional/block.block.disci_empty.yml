@@ -1,0 +1,25 @@
+uuid: 8e94bcf4-26c9-42bc-9363-c99341dc0fe0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:58542ad4-1d70-445c-bc8f-c92111a212fb'
+  module:
+    - block_content
+  theme:
+    - disci
+id: disci_empty
+theme: disci
+region: footer_bottom
+weight: -8
+provider: null
+plugin: 'block_content:58542ad4-1d70-445c-bc8f-c92111a212fb'
+settings:
+  id: 'block_content:58542ad4-1d70-445c-bc8f-c92111a212fb'
+  label: Empty
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

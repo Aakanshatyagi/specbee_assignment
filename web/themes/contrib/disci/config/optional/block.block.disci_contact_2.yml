@@ -1,0 +1,25 @@
+uuid: 74caef67-9fce-47dc-afb3-7d1d4df20cb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.contact
+  module:
+    - system
+  theme:
+    - disci
+id: disci_contact_2
+theme: disci
+region: footer_top
+weight: -4
+provider: null
+plugin: 'system_menu_block:contact'
+settings:
+  id: 'system_menu_block:contact'
+  label: Contact
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,14 @@
+<ul class="uk-list uk-list-collapse" id="footer#0">
+    {% for item in office_hours %}
+    <li class="el-item">
+        <div class="uk-child-width-expand@s uk-grid-column-small uk-grid-row-collapse uk-grid" uk-grid="">
+            <div class="uk-width-small@s uk-text-break uk-first-column">
+                <div class="el-title uk-margin-remove">{{ item.day }}</div>
+            </div>
+            <div>
+                <div class="el-content uk-panel">{{ item.hours }}</div>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,25 @@
+uuid: b23e94f0-1d39-4bb2-a21d-3f2b93c16d87
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:12a04ad2-a15b-4022-b995-a89a82321362'
+  module:
+    - block_content
+  theme:
+    - disci
+id: disci_contact
+theme: disci
+region: footer_top
+weight: -5
+provider: null
+plugin: 'block_content:12a04ad2-a15b-4022-b995-a89a82321362'
+settings:
+  id: 'block_content:12a04ad2-a15b-4022-b995-a89a82321362'
+  label: Contact
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

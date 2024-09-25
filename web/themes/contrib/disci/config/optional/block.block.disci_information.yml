@@ -1,0 +1,25 @@
+uuid: aec53b52-9cec-4a0e-9959-3700ea7763b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.information
+  module:
+    - system
+  theme:
+    - disci
+id: disci_information
+theme: disci
+region: footer_bottom
+weight: -7
+provider: null
+plugin: 'system_menu_block:information'
+settings:
+  id: 'system_menu_block:information'
+  label: Information
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

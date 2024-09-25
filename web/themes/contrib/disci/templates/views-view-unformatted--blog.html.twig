@@ -1,0 +1,57 @@
+{#
+/**
+* @file
+* Theme override to display a view of unformatted rows.
+*
+* Available variables:
+* - title: The title of this group of rows. May be empty.
+* - rows: A list of the view's row items.
+*   - attributes: The row's HTML attributes.
+*   - content: The row's content.
+* - view: The view object.
+* - default_row_class: A flag indicating whether default classes should be
+*   used on rows.
+*
+* @see template_preprocess_views_view_unformatted()
+*/
+#}
+<div class="uk-position-relative uk-margin-remove-vertical" style="z-index: 1;">
+  <div class="uk-grid uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-collapse uk-grid-match" uk-grid="" uk-grid-checked="uk-tile-default,uk-tile-muted">
+    {% for key, row in rows %}
+      {%
+      set row_classes = [
+      default_row_class ? 'views-row',
+      'in-stretch'
+      ]
+      %}
+      {% set field_image = view.style_plugin.getField(key, 'field_image')|render|striptags|trim %}
+      {% set title = view.style_plugin.getField(key, 'title')|render|striptags|trim %}
+      {% set created = view.style_plugin.getField(key, 'created')|render|striptags|trim %}
+      {% set view_node = view.style_plugin.getField(key, 'view_node')|render|striptags|trim %}
+      <div>
+        <article class="el-item uk-grid-item-match">
+          <a class="uk-panel uk-tile-checked uk-tile-hover uk-flex uk-flex-column uk-link-toggle uk-tile-default" href="{{ view_node }}">
+            <div>
+              <picture>
+                <img src="{{ field_image }}" class="el-image">
+              </picture>
+            </div>
+            <div class="uk-flex-1 uk-flex uk-flex-column uk-padding uk-margin-remove-first-child">
+              <div class="el-meta uk-h6 uk-text-danger uk-margin-top uk-margin-remove-bottom">
+                {{ created }}
+              </div>
+              <h2 class="el-title uk-h4 uk-margin-small-top uk-margin-remove-bottom uk-flex-1">
+              {{ title }}
+              </h2>
+              <div class="uk-margin-medium-top">
+                <div class="el-link uk-button uk-button-default">
+                  <span uk-icon="icon: arrow-right; ratio: 1.4" class="uk-icon"></span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+    {% endfor %}
+  </div>
+</div>

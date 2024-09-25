@@ -1,0 +1,86 @@
+<footer>
+    <div class="uk-section-default uk-section">
+        <div class="uk-container uk-container-large">
+            <div class="tm-grid-expand uk-grid-margin" uk-grid>
+                {% for key, item in page.footer_top %}
+                    {% if key|first != '#' %}
+                        {% set classes = [] %}
+                        {% if loop.index != 1 %}
+                            {% set classes = classes|merge(['uk-width-1-2']) %}
+                        {% endif %}
+                        
+                        {% set classes = classes|merge(['uk-width-1-3@s', 'uk-width-1-5@m']) %}
+                        
+                        {% if loop.index != 4 %}
+                            {% set classes = classes|merge(['uk-flex-first']) %}
+                        {% endif %}
+                        
+                        {% if loop.index == 5 %}
+                            {% set classes = classes|merge(['uk-hidden@s']) %}
+                        {% endif %}
+                        <div class="{{ classes|join(' ') }}">
+                            {% if loop.index == 2 and show_location %}
+                                <div class="uk-h5">{{ 'Location'|t }}</div>
+                                {% include '@disci/location.html.twig' %}
+                            {% elseif loop.index == 3 and show_office_hours %}
+                                <div class="uk-h5">{{ 'Office Hours'|t }}</div>
+                                {% include '@disci/office_hours.html.twig' %}
+                            {% elseif loop.index == 4 and show_contact %}
+                                <div class="uk-h5">{{ 'Contact'|t }}</div>
+                                {% include '@disci/contact.html.twig' %}
+                            {% else %}
+                                {{ item }}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="tm-grid-expand uk-margin-large" uk-grid>
+                {% for key, item in page.footer_bottom %}
+                    {% if key|first != '#' %}
+                        {% set classes = [] %}
+                        {% if loop.index == 1 %}
+                            {% set classes = ['uk-width-1-4@m'] %}
+                        {% elseif loop.index == 2 %}
+                            {% set classes = ['uk-width-1-2', 'uk-width-1-3@s', 'uk-width-1-4@m'] %}
+                        {% elseif loop.index == 3 %}
+                            {% set classes = ['uk-width-1-3@s', 'uk-width-1-4@m', 'uk-visible@s'] %}
+                        {% elseif loop.index == 4 %}
+                            {% set classes = ['uk-width-1-2', 'uk-width-1-3@s', 'uk-width-1-4@m'] %}
+                        {% endif %}
+                        
+                        <div class="{{ classes|join(' ') }}">
+                            {{ item }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                {% if show_footer_icons %}
+                    <div class="uk-width-1-2 uk-width-1-3@s uk-width-1-4@m">
+                        <div class="uk-h5">{{ 'Follow Us'|t }}</div>
+                        {% include '@disci/footer-social-icons.html.twig' %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="uk-section-default uk-section uk-section-small uk-padding-remove-top">
+        <div class="uk-container uk-container-large">
+            <div class="tm-grid-expand uk-grid-small uk-margin-small" uk-grid>
+                {% for key, item in page.bottom %}
+                    {% if loop.index == 1 %}
+                        <div class="uk-width-1-3@s uk-width-1-4@m">
+                            {{ item }}
+                        </div>
+                    {% endif %}
+                    {% if loop.index == 2 %}
+                        <div class="uk-width-2-3@s uk-width-3-4@m uk-visible@m">
+                            <div class="uk-panel uk-text-small uk-text-muted uk-text-right@s uk-text-center uk-visible@m">
+                                {{ item }}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</footer>

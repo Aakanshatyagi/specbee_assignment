@@ -1,0 +1,59 @@
+<header class="tm-header uk-visible@m uk-position-z-index">
+    <div class="tm-headerbar-default tm-headerbar tm-headerbar-top">
+        <div class="uk-container uk-container-large uk-flex uk-flex-middle">
+            {{ page.brands }}
+            <div class="uk-margin-auto-left">
+                <div class="uk-grid-medium uk-child-width-auto uk-flex-middle" uk-grid="">
+                    <div>
+                        <div class="uk-panel widget widget_builderwidget" id="builderwidget-4">
+                            <div class="tm-grid-expand uk-grid-column-medium uk-grid-margin" uk-grid="">
+                                <div class="uk-grid-item-match uk-flex-middle uk-width-auto">
+                                    <div class="uk-panel uk-width-1-1">
+                                        <div class="uk-h6">
+                                            <a class="el-link uk-link-heading" href="tel:+5551234678">+ 555 - 1234678</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% if show_top_icons %}
+                                    {% include '@disci/top-social-icons.html.twig' %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-panel widget widget_search" id="search-5">
+                            <a class="uk-search-toggle uk-display-block uk-icon uk-search-icon" href="#search-modal" uk-search-icon="" uk-toggle="" aria-label="Open Search" role="button"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div uk-sticky="media: @m; cls-active: uk-navbar-sticky; sel-target: .uk-navbar-container; show-on-up: true; animation: uk-animation-slide-top">
+        <div class="uk-navbar-container">
+            <div class="uk-container uk-container-large uk-flex uk-flex-middle">
+                <nav
+                    class="uk-navbar uk-flex-auto"
+                    uk-navbar
+                    >
+                    <div class="uk-navbar-left">
+                        {{ page.navbar_left }}
+                    </div>
+                    <div class="uk-navbar-right">
+                        <div class="uk-navbar-item widget widget_builderwidget" id="builderwidget-6">
+                            {{ page.navbar_right }}
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="search-modal" class="uk-modal-full uk-modal" uk-modal="container: true" style="" tabindex="-1">
+    <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport="">
+        <button class="uk-modal-close-full uk-close-large uk-icon uk-close" type="button" uk-close="" uk-toggle="cls: uk-modal-close-full uk-close-large uk-modal-close-default; mode: media; media: @s" aria-label="Close"></button>
+        <div class="uk-search uk-search-large">
+            {{ page.search }}
+        </div>
+    </div>
+</div>

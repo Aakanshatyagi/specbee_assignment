@@ -1,0 +1,36 @@
+<header class="tm-header-mobile uk-hidden@m">
+    
+    <div class="uk-navbar-container">
+        <div class="uk-container uk-container-expand">
+            <nav class="uk-navbar" uk-navbar="{&quot;align&quot;:&quot;left&quot;,&quot;container&quot;:&quot;.tm-header-mobile&quot;,&quot;boundary&quot;:&quot;.tm-header-mobile .uk-navbar-container&quot;,&quot;target-y&quot;:&quot;.tm-header-mobile .uk-navbar-container&quot;,&quot;dropbar&quot;:true,&quot;dropbar-anchor&quot;:&quot;.tm-header-mobile .uk-navbar-container&quot;,&quot;dropbar-transparent-mode&quot;:&quot;remove&quot;}">
+                <div class="uk-navbar-left">
+                    {{ page.brands }}
+                </div>
+                <div class="uk-navbar-right">
+                    <a uk-toggle="" href="#tm-dialog-mobile" class="uk-navbar-toggle uk-navbar-toggle-animate" role="button" aria-label="Open menu">
+                        <div uk-navbar-toggle-icon="" class="uk-icon uk-navbar-toggle-icon">
+                        </div>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    
+    
+    
+    <div id="tm-dialog-mobile" class="uk-dropbar uk-dropbar-top uk-drop" uk-drop="{&quot;clsDrop&quot;:&quot;uk-dropbar&quot;,&quot;flip&quot;:&quot;false&quot;,&quot;container&quot;:&quot;.tm-header-mobile&quot;,&quot;target-y&quot;:&quot;.tm-header-mobile .uk-navbar-container&quot;,&quot;mode&quot;:&quot;click&quot;,&quot;target-x&quot;:&quot;.tm-header-mobile .uk-navbar-container&quot;,&quot;stretch&quot;:true,&quot;pos&quot;:&quot;bottom-left&quot;,&quot;bgScroll&quot;:&quot;false&quot;,&quot;animation&quot;:&quot;reveal-top&quot;,&quot;animateOut&quot;:true,&quot;duration&quot;:300,&quot;toggle&quot;:&quot;false&quot;}">
+        <div class="tm-height-min-1-1 uk-flex uk-flex-column">
+            <div class="uk-margin-auto-bottom">
+                <div class="uk-grid uk-child-width-1-1 uk-grid-stack" uk-grid="">
+                    <div>
+                        <div class="uk-panel widget widget_nav_menu" id="nav_menu-3">
+                            {{ page.navbar_left }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</header>

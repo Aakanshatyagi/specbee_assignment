@@ -1,0 +1,25 @@
+uuid: 4819e5a7-accd-4832-a127-b304c6192651
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f01d6b26-2c36-4332-b53a-1eab0042395a'
+  module:
+    - block_content
+  theme:
+    - disci
+id: disci_navbarright
+theme: disci
+region: navbar_right
+weight: 0
+provider: null
+plugin: 'block_content:f01d6b26-2c36-4332-b53a-1eab0042395a'
+settings:
+  id: 'block_content:f01d6b26-2c36-4332-b53a-1eab0042395a'
+  label: 'Navbar Right'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

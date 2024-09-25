@@ -1,0 +1,25 @@
+uuid: 6ab906be-eed4-4353-9cf2-dcc7eb72483b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c8877bca-ad4f-40c0-9448-91905b7cd659'
+  module:
+    - block_content
+  theme:
+    - disci
+id: disci_bottomleft
+theme: disci
+region: bottom
+weight: 0
+provider: null
+plugin: 'block_content:c8877bca-ad4f-40c0-9448-91905b7cd659'
+settings:
+  id: 'block_content:c8877bca-ad4f-40c0-9448-91905b7cd659'
+  label: 'Bottom Left'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

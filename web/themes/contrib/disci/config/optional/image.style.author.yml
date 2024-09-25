@@ -1,0 +1,15 @@
+uuid: 268e7135-06eb-44f1-95e0-530b9d0541a8
+langcode: en
+status: true
+dependencies: {  }
+name: author
+label: Author
+effects:
+  7b6a9764-f3ae-4a1e-aca6-e8325759c560:
+    uuid: 7b6a9764-f3ae-4a1e-aca6-e8325759c560
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 145
+      height: 145
+      anchor: center-center

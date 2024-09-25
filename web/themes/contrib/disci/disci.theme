@@ -1,0 +1,199 @@
+<?php
+
+
+use Drupal\file\Entity\File;
+use Drupal\Core\File\FileSystemInterface;
+
+
+/**
+* Implements hook_preprocess_page() for page.html.twig.
+*/
+
+
+
+
+
+
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+function disci_preprocess_page(&$variables) {
+  $variables['show_frontpage_content'] = theme_get_setting('show_frontpage_content');
+  // 'footer_icons_show' ve 'top_icons_show' ayarlarını tema ayarlarından al.
+  $variables['show_footer_icons'] = theme_get_setting('show_footer_icons', 'disci');
+  $variables['show_top_icons'] = theme_get_setting('show_top_icons', 'disci');
+  $variables['show_contact'] = theme_get_setting('show_contact', 'disci');
+  $variables['show_office_hours'] = theme_get_setting('show_office_hours', 'disci');
+  $variables['show_location'] = theme_get_setting('show_location', 'disci');
+  $variables['phone_number'] = theme_get_setting('phone_number', 'disci');
+  $variables['email'] = theme_get_setting('email', 'disci');
+  $variables['location'] = theme_get_setting('location', 'disci');
+
+  // 'social_icons' ayarını tema ayarlarından al ve satırlara böl.
+  $links_string = theme_get_setting('social_icons', 'disci');
+  $links_array = explode("\n", $links_string);
+
+  // Her bir link için sosyal medya ismini ve linki içeren bir dizi oluştur.
+  $social_icons = array_map(function ($link) {
+    $link = trim($link);
+    if (!empty($link)) {
+      $parsed_url = parse_url($link);
+      $host = isset($parsed_url['host']) ? $parsed_url['host'] : '';
+      $name = explode('.', str_replace('www.', '', $host))[0];
+      return ['link' => $link, 'name' => $name];
+    }
+  }, $links_array);
+
+  // Boş elemanları filtrele.
+  $variables['social_icons'] = array_filter($social_icons);
+
+
+
+  // Parse and process the entered text
+  $office_hours_text = theme_get_setting('office_hours', 'disci');
+  $office_hours_lines = explode(PHP_EOL, $office_hours_text); // Split text into lines
+
+  $office_hours = []; // Initialize array to store parsed office hours
+
+  // Loop through each line and parse
+  foreach ($office_hours_lines as $line) {
+    // Split line by ":"
+    $parts = explode(':', $line);
+    
+    // Trim and store each part
+    $day = trim($parts[0]);
+    $hours = trim($parts[1]);
+
+    // Store parsed data in an array
+    $office_hours[] = [
+      'day' => $day,
+      'hours' => $hours,
+    ];
+    $variables['office_hours'] = $office_hours;
+  }
+
+
+  // Parse and process the entered text
+  $location_text = theme_get_setting('location', 'disci');
+  $location_lines = explode(PHP_EOL, $location_text); // Split text into lines
+
+  $locations = []; // Initialize array to store parsed locations
+
+  // Loop through each line and parse
+  foreach ($location_lines as $line) {
+    // Trim and store each line
+    $location = trim($line);
+
+    // Add to the array if not empty
+    if (!empty($location)) {
+      $locations[] = $location;
+    }
+    $variables['locations'] = $locations;
+  }
+
+}
+
+
+/**
+* Implements hook_theme_suggestions_HOOK_alter() for block templates.
+*/
+function disci_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+// Get the block plugin.
+  $block_plugin_id = $variables['elements']['#id'];
+// Load the block entity.
+  $block = \Drupal\block\Entity\Block::load($block_plugin_id);
+// If the block entity is loaded and it belongs to a specific region, suggest a template
+// based on that region.
+  if ($block instanceof \Drupal\block\Entity\Block && !empty($block->getRegion())) {
+    $region = str_replace('.', '_', $block->getRegion());
+    $suggestions[] = 'block__' . $region;
+  }
+}
+/**
+* Implements template_preprocess_form_element().
+*/
+function disci_preprocess_form_element(&$variables) {
+  $element = $variables['element'];
+  $type = $element['#type'];
+// Grouped form elements do not need the uk-margin class. This adds a
+// grouped variable to use in form-element.html.twig.
+  $groups = isset($element['#groups']) && is_array($element['#groups']);
+  $variables['grouped'] = FALSE;
+  if ($groups) {
+    $variables['grouped'] = TRUE;
+  }
+// Perform various changes to the variables for advanced form elements.
+  $form_advanced = $type == 'checkbox' || $type == 'radio';
+  $variables['label_text'] = '';
+  if ($form_advanced && isset($variables['label']['#title']) && $variables['label']['#title'] != '') {
+    $variables['label_text'] = ['#markup' => $variables['label']['#title']];
+  }
+}
+/**
+* Implements hook_preprocess_HOOK() for input.html.twig.
+*/
+function disci_preprocess_input(&$variables) {
+  $element = $variables['element'];
+  if (isset($element['#parents']) && isset($element['#errors']) && !empty($element['#validated'])) {
+    $variables['attributes']['class'][] = 'uk-form-danger';
+  }
+  switch ($element['#type']) {
+    case 'email':
+    case 'number':
+    case 'password':
+    case 'search':
+    case 'tel':
+    case 'file':
+    case 'textfield':
+    case 'url':
+    $variables['attributes']['class'][] = 'uk-input';
+    break;
+    case 'checkbox':
+    $variables['attributes']['class'][] = 'uk-checkbox';
+    break;
+    case 'date':
+    $variables['attributes']['class'][] = 'uk-input';
+    $variables['attributes']['class'][] = 'uk-form-small';
+    $variables['attributes']['class'][] = 'uk-form-width-medium';
+    break;
+    case 'hidden':
+    $variables['attributes']['class'][] = 'uk-margin';
+    break;
+    case 'radio':
+    $variables['attributes']['class'][] = 'uk-radio';
+    break;
+    case 'range':
+    $variables['attributes']['class'][] = 'uk-range';
+    break;
+    case 'button':
+    case 'submit':
+    $variables['attributes']['class'][] = 'uk-button';
+    break;
+  }
+  if ($element['#type'] == 'button' || $element['#type'] == 'submit') {
+    if (is_object($variables['element']['#value'])) {
+      $value = $variables['element']['#value']->__toString();
+    }
+    else {
+      $value = $variables['element']['#value'];
+    }
+    switch (TRUE) {
+      case preg_match('/Apply.*/', $value):
+      case preg_match('/Filter.*/', $value):
+      case preg_match('/Generate.*/', $value):
+      case preg_match('/Install.*/', $value):
+      case preg_match('/Save.*/', $value):
+      $variables['attributes']['class'][] = 'uk-button-primary';
+      break;
+      case preg_match('/Delete.*/', $value):
+      case preg_match('/Remove.*/', $value):
+      $variables['attributes']['class'][] = 'uk-button-danger';
+      break;
+      default:
+      $variables['attributes']['class'][] = 'uk-button-default';
+    }
+  }
+}

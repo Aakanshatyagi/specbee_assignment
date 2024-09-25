@@ -1,0 +1,5 @@
+<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+    <circle class="uk-preserve" fill="#fedf72" cx="22" cy="22" r="20" />
+    <rect class="uk-preserve" width="30" height="20" fill="#fff" x="18" y="26" />
+    <path fill="none" stroke="#1e3876" stroke-miterlimit="10" stroke-width="2" d="M18,26H48V46H18Zm0,4,15,8,15-8" />
+</svg>

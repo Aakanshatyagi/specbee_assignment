@@ -1,0 +1,25 @@
+uuid: a83cc617-81cb-4806-ac76-af120f69baac
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:243492ca-08a8-45c4-b913-f88f9300ec9f'
+  module:
+    - block_content
+  theme:
+    - disci
+id: disci_bottomright
+theme: disci
+region: bottom
+weight: 0
+provider: null
+plugin: 'block_content:243492ca-08a8-45c4-b913-f88f9300ec9f'
+settings:
+  id: 'block_content:243492ca-08a8-45c4-b913-f88f9300ec9f'
+  label: 'Bottom Right'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
