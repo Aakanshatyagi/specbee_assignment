@@ -1,0 +1,16 @@
+global-styling:
+  version: 1.0.0
+  css:
+    theme:
+      libs/slick/css/slick.css: {}
+      css/style.css: {}
+
+global-scripts:
+  version: 1.0.2
+  js:
+    libs/slick/js/slick.min.js: {}
+    js/custom-slider.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once

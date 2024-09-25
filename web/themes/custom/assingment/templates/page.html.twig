@@ -1,0 +1,152 @@
+{#
+/**
+ * @file
+ * Olivero's theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ *
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.highlighted: Items for the highlighted region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar: Items for the first sidebar.
+ * - page.featured_bottom_first: Items for the first featured bottom region.
+ * - page.featured_bottom_second: Items for the second featured bottom region.
+ * - page.footer_first: Items for the first footer column.
+ * - page.footer_second: Items for the second footer column.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ * - page.social: Items for the social region.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+
+<div id="page-wrapper" class="page-wrapper">
+  <div id="page">
+    {# Site Top start #}
+    {% if page.site_top %}
+      <div class="site-top-outer">
+          {{ page.site_top }}
+      </div>
+      {% endif %}
+    {# Header start #}
+    <header id="header" class="header">
+      {% if page.header %}
+      <div class="header-sec-outer">
+        <div class="wrapper">
+          <div class="header-sec">
+            {{ page.header }}
+          </div>
+        </div>
+      </div>  
+      {% endif %}
+      {% if page.header_menu %}
+      <div class="header-menu-outer">
+        <div class="menu-close">
+          <div class="wrapper"><span class="menu-close-icon">Close Menu</span></div>
+        </div>
+        <div class="header-menu">
+          <div class="wrapper">
+            {{ page.header_menu }}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </header>
+
+    <main>
+      {# banner start #}
+      {% if page.banner %}
+      <div class="banner-outer">
+          {{ page.banner }}
+      </div>
+      {% endif %}
+      {# banner end #}
+      {# breadcrumb start #}
+      {% if page.breadcrumb %}
+      <div class="breadcrumb-outer">
+          <div class="wrapper">
+            {{ page.breadcrumb }}
+          </div>
+      </div>
+      {% endif %}
+      {# breadcrumb end #}
+
+      {# featured start #}
+      {% if page.featured %}
+      <div class="featured">
+          {{ page.featured }}
+      </div>
+      {% endif %}
+      {# featured end #}
+
+      {# page_top start #}
+      {% if page.full_width_top %}
+      <div class="page-top">
+          {{ page.full_width_top }}
+      </div>
+      {% endif %}
+      {# page_top end #}
+
+      {# page content start #}
+      {% if page.content %}
+      <div class="wrapper">
+          {{ page.content }}
+      </div>
+      {% endif %}
+      {# page content end #}
+
+      {# page_bottom start #}
+      {% if page.full_width_bottom %}
+      <div class="page-bottom">
+          {{ page.full_width_bottom }}
+      </div>
+      {% endif %}
+      {# page_bottom end #}
+
+    </main>
+    {# footer start #}
+    <footer class="footer">
+    {% if page.footer_top %}
+        <div class="footer-top">
+        <div class="wrapper">
+            {{ page.footer_top }}
+        </div>
+      </div>
+    {% endif %}
+    {% if page.footer_bottom %}
+      <div class="footer-bottom">
+        <div class="wrapper">
+            {{ page.footer_bottom }}
+        </div>
+      </div>
+    {% endif %}
+    </footer>
+    {# footer end #}
+  </div>
+</div>

@@ -1,0 +1,132 @@
+@import "variables";
+
+//breakpoint
+@mixin mquery($size) {
+    @if $size == xlarge {
+        @media only screen and (min-width: 1480px) {
+            @content;
+        }
+    }
+    @if $size == wrap {
+        @media only screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+    @if $size == large {
+        @media only screen and (max-width: 1199px) {
+            @content;
+        }
+    }
+    @if $size == tab {
+        @media only screen and (min-width: 768px) {
+            @content;
+        }
+    }
+    @if $size == medium {
+        @media only screen and (max-width: 1023px) {
+            @content;
+        }
+    }
+    @if $size == mobile {
+        @media only screen and (max-width: 767px) {
+            @content;
+        }
+    }
+    @if $size == small {
+        @media only screen and (max-width: 480px) {
+            @content;
+        }
+    }
+    @if $size == xsmall {
+        @media only screen and (max-width: 430px) {
+            @content;
+        }
+    }
+}
+
+// slick //
+@mixin slick-arrow {
+    cursor: pointer;
+    font-size: 0;
+    left: -50px;
+    top: 50%;
+    position: absolute;
+    text-indent: -999px;
+    overflow: unset;
+    z-index: 9;
+    width: 19px;
+    height: 30px;
+    background: url(../images/grey-left.svg) no-repeat center center;
+    background-size: 19px;
+    transform: translateY(-50%);
+    border: none;
+    padding: 0;
+    border-radius: 50%;
+    &.slick-next{
+        background-image: url(../images/grey-left.svg);
+        transform: translateY(-50%) rotate(180deg);
+        left: auto;
+        right: -50px;
+        &:hover {
+            background-image: url(../images/blueright-arrow.svg);
+            transform: translateY(-50%);
+            
+        }
+    }
+    &:hover {
+        background-image: url(../images/blueright-arrow.svg);
+        transform: translateY(-50%) rotate(180deg);
+    }
+    &.slick-disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+@mixin slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0 0 0;
+    @include mquery(mobile){
+        margin: 25px 0 0 0;
+    }
+    li{
+        min-width: 30px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        &::after{
+            content: '';
+            position: absolute;
+            left: 22px;
+            background: #fff;
+            width: calc(100% - 30px);
+            height: 1px;
+        }
+        &:last-child{
+            min-width: 15px;
+            &::after{
+                display: none;
+            }
+        }
+    }
+    button{
+        width: 25px;
+        height: 25px;
+        text-indent: -999px;
+        overflow: hidden;
+        border: 2px solid #0b80cf;
+        border-radius: 50px;
+        margin: 5px;
+        cursor: pointer;
+        border-radius: 50%;
+        margin: 0;
+        transform: scale(.8);
+    }
+    .slick-active{
+        button{
+            background: #0b80cf;
+        }
+    }
+} 

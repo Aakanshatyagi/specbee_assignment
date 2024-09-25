@@ -1,0 +1,33 @@
+name: Assingment
+type: theme
+base theme: olivero
+description: A custom theme for the assingment
+package: Custom
+core_version_requirement: ^10
+libraries:
+  - assingment/global-styling
+  - assingment/global-scripts
+
+libraries-override:
+  claro/global-styling: false
+  olivero/global-styling: false
+  olivero/navigation-primary: false
+  olivero/search-narrow: false
+  olivero/search-results: false
+  olivero/navigation-secondary: false
+  olivero/search-wide: false
+  stable9/views/views.module: false
+  system/base: false
+  
+regions:
+  site_top: 'Site Top'
+  header: 'Header'
+  header_menu: 'Header Menu'
+  breadcrumb: 'Breadcrumb'
+  banner: 'Banner'
+  featured: 'Featured'
+  full_width_top: 'Full Width Top'
+  content: 'Content'
+  full_width_bottom: 'Full Width Bottom'
+  footer_top: 'Footer Top'
+  footer_bottom: 'Footer Bottom'

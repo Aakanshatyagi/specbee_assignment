@@ -1,0 +1,173 @@
+.block-quicktabs {
+  .block__title {
+    text-align: center;
+    padding-bottom: 60px;
+    font-size: 36px;
+    line-height: 56px;
+    color: #424a55;
+  }
+}
+.conference-outer {
+  padding-top: 34px;
+  padding-bottom: 60px;
+  .conference-slider {
+    margin: -20px -12px;
+
+    .slick-slide {
+      padding: 20px 12px;
+      height: auto;
+
+      > div,
+      .conference-box {
+        height: 100%;
+      }
+    }
+
+    .slick-track {
+      display: flex;
+    }
+  }
+  .conference-box {
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px solid #ececec;
+    position: relative;
+    transition: all 0.5s ease;
+    &:hover {
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+      .conference-bottom {
+        display: flex !important;
+        margin-top: -60px;
+      }
+      .conference-text {
+        transform: translateY(-70px);
+        background-color: #fff;
+      }
+    }
+    .conference-img {
+      img {
+        width: 100%;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+    }
+    .conference-price {
+      float: right;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      background-color: rgba(1, 89, 149, 0);
+      p {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #ffffff;
+        border-radius: 3px;
+        border: 1px solid #eff1f2;
+        padding: 5px 8px;
+        font-weight: 500;
+      }
+    }
+    .conference-bottom-outer {
+      background: #fff;
+      .conference-text {
+        padding: 20px 28px 0 28px;
+        transition: all 0.5s ease;
+        .conference-title {
+          padding-bottom: 18px;
+          a {
+            font-size: 18px;
+            line-height: 24px;
+            color: #424a55;
+            font-weight: 600;
+          }
+        }
+        .conference-topic,
+        .conference-date,
+        .conference-loc {
+          position: relative;
+          font-size: 14px;
+          line-height: 12px;
+          font-weight: 600;
+          color: #7c8993;
+          padding-left: 28px;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 18px;
+            height: 14px;
+            left: 0;
+            top: 0;
+          }
+        }
+        .conference-topic {
+          margin-bottom: 15px;
+          &::before {
+            background: url(../images/Shape-847-copy.svg) center center no-repeat;
+          }
+        }
+        .conference-date {
+          margin-bottom: 15px;
+          &::before {
+            background: url(../images/date.svg) center center no-repeat;
+          }
+        }
+        .conference-loc {
+          margin-bottom: 20px;
+          &::before {
+            background: url(../images/location.svg) center center no-repeat;
+          }
+        }
+      }
+      .conference-bottom {
+        border-top: 1px solid #ececec;
+        display: none;
+        transition: all 0.5s ease;
+        .like,
+        .download,
+        .share {
+          border-right: 1px solid #ececec;
+          padding: 15px 22px;
+          &:hover {
+            img {
+              filter: invert(58%) sepia(99%) saturate(5313%) hue-rotate(184deg)
+                brightness(90%) contrast(101%);
+            }
+          }
+
+          @include mquery(medium) {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+          }
+          @include mquery(mobile) {
+            width: auto;
+            display: inline-block;
+          }
+        }
+        .view-deatils {
+          padding: 15px 22px;
+          @include mquery(medium) {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+          }
+          @include mquery(mobile) {
+            padding: 15px;
+            width: auto;
+            display: block;
+          }
+          a {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 16px;
+            transition: all 0.3s ease;
+            &:hover {
+              color: #0873bb;
+            }
+          }
+        }
+      }
+    }
+  }
+}

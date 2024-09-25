@@ -1,0 +1,162 @@
+.width100 {
+  width: 100% !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.visibility-hidden {
+  visibility: hidden !important;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: #0b80cf;
+  transition: all .3s ease-in;
+}
+
+/* Lists */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ol {
+  margin-left: 18px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 0;
+
+  >li {
+    padding-left: 3px !important;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  li {
+    margin-top: 10px;
+
+    &::marker {
+      font-weight: 700;
+    }
+  }
+}
+
+p,
+li {
+  line-height: 1.6;
+}
+
+.slick-track {
+  margin-left: initial;
+  margin-right: initial;
+}
+
+.slick-arrow {
+  @include slick-arrow;
+}
+
+.slick-dots {
+  @include slick-dots;
+}
+
+main {
+  min-height: 700px;
+  overflow: hidden;
+  position: relative;
+  @include mquery(mobile) {
+    min-height: 500px;
+  }
+}
+
+.link {
+  color: #0b80cf;
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.disabled {
+  pointer-events: none !important;
+  opacity: .5;
+}
+
+// commmon tabs //
+.tabs-scroll,.quicktabs-wrapper{
+  margin-bottom: 30px;
+  
+  .location-tabs,.quicktabs-tabs {
+    display: flex;
+    border-bottom: 2px solid #0b80cf;
+    
+    @include mquery(large) {
+      width: 100%;
+    }
+
+    li {
+        flex: 1;
+        white-space: wrap;
+        &.active {
+            position: relative;
+
+            a,span {
+              font-size: 24px;
+              line-height: 24px;
+              color: #424a55;
+              font-weight: 600;
+              @include mquery(medium){
+                font-size: 14px;
+              }
+            }
+            &::after {
+                transform: rotate(45deg);
+                background: #fff;
+                width: 20px;
+                height: 20px;
+                content: "";
+                position: absolute;
+                top: calc(100% - 10px);
+                left: 50%;
+                margin-left: -20px;
+                border-right: 2px solid #017fd5;
+                border-bottom: 2px solid #017fd5
+            }
+
+        }
+
+        a,span {
+            font-size: 18px;
+            line-height: 18px;
+            color: #017fd5;
+            font-weight: 500;
+            padding: 22px 16px;
+            display: block;
+            cursor: pointer;
+            transition: none;
+            text-align: center;
+            height: 100%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            @include mquery(mobile) {
+              // white-space: nowrap;
+              padding: 8px 2px;
+              font-size: 14px;
+            }
+        }
+    }
+  }
+}
+
