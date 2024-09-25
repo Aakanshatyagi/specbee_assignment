@@ -1,7 +1,0 @@
-<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-    <circle class="uk-preserve" fill="#90dfb0" cx="22" cy="22" r="20" />
-    <circle class="uk-preserve" fill="#fff" cx="34" cy="34" r="14" />
-    <circle fill="none" stroke="#1e3876" stroke-miterlimit="10" stroke-width="2" cx="34" cy="34" r="14" />
-    <line fill="none" stroke="#1e3876" stroke-miterlimit="10" stroke-width="1.5" x1="34" y1="27" x2="34" y2="34.5" />
-    <line fill="none" stroke="#1e3876" stroke-miterlimit="10" stroke-width="1.5" x1="33.3" y1="34.5" x2="39" y2="34.5" />
-</svg>
